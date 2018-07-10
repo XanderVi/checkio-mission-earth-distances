@@ -39,11 +39,14 @@ api.add_listener(
     CheckiOReferee(
         tests=TESTS,
         cover_code={
-            'python-27': cover_codes.unwrap_args,  # or None
+            'js-node': cover_codes.js_unwrap_args,
             'python-3': cover_codes.unwrap_args
         },
         checker=checkers.float_comparison(1),
-        function_name="distance"
+        function_name={
+            "python": "distance",
+            "js": "distance"
+        }
         # add_allowed_modules=[],
         # add_close_builtins=[],
         # remove_allowed_modules=[]
